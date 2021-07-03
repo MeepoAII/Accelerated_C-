@@ -16,4 +16,6 @@ homework.cpp
 ## 3-5
 3-5.cpp
 题目中说，平时成绩的次数要是一个确定的值，的确用while(cin >> name)的话，程序不能坚持到下一个cin >> name，因为在cin >> homework的时候那个end-of-file没有被clear，所有cin>>name 还是会读到那个end-of-file，然后直接退出最外面那个while
+## 3-6
+double homework_grade = (count > 0) ? sum / count : 0.0
 
