@@ -1,9 +1,9 @@
 #include <vector>
 #include <string>
+#include <iostream>
 #include <stdexcept>
-using std::vector;
-using std::domain_error;
-using std::string;
+#include <cctype>
+using namespace std;
 template <class T>
 
 T median(vector<T> v)
@@ -19,7 +19,7 @@ T median(vector<T> v)
     sort(v.begin(), v.end());
     vec_sz mid = size / 2;
 
-    return size % 2 == 0 ? (v[mid] + v[md-1]) / 2 : v[mid];
+    return size % 2 == 0 ? (v[mid] + v[mid-1]) / 2 : v[mid];
 
 }
 
@@ -91,6 +91,11 @@ bool binary_search(Ran begin, Ran end, const X& x)
     return false;
 }
 
+bool not_space(char c)
+{
+    return !isspace(c);
+}
+
 
 template <class Out>
 void split(const string& str, Out os)
@@ -115,4 +120,17 @@ void split(const string& str, Out os)
         i = j;
     }
     
+}
+
+
+
+int main()
+{
+    string s;
+    while (getline(cin, s))
+    {
+        split(s, ostream_iterator<string>(cout, "\n"));
+    }
+    
+    return 0;
 }

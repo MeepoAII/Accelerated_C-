@@ -28,12 +28,12 @@ int main()
     sort(students.begin(), students.end(), compare);
 
     // write the names and grades
-    for (vector<Student_info>::size_type i = 0;
-        i != students.size(); ++i)
+    for (vector<Student_info>::const_iterator iter = students.begin();
+        iter != students.end(); ++iter)
     {
         // write the name, paddedd on the right to maxlen + 1 characters
-        cout << students[i].name << setw()
-            << string(maxlen + 1 - students[i].name.size(), ' ');
+        cout << (*iter).name
+            << string(maxlen + 1 - (*iter).name.size(), ' ');
 
         // compute and write the grade
         try
