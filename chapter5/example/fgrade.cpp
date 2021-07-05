@@ -20,7 +20,7 @@ vector<Student_info> extract_fails(vector<Student_info>& students)
         if (fgrade(*iter))
         {
             fail.push_back(*iter);
-            students.erase(iter);
+            iter = students.erase(iter);
         }
         else
         {
