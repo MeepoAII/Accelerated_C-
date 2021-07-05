@@ -19,7 +19,7 @@ int main()
     // read and store all the students data.
     while (read(cin, record))
     {
-        // find lentgh if longest name
+        // find length if longest name
         maxlen = max(maxlen, record.name.size());
         students.push_back(record);
     }
@@ -38,7 +38,7 @@ int main()
         // compute and write the grade
         try
         {
-            double final_grade = grade(students[i]);
+            double final_grade = grade((*iter));
             streamsize prec = cout.precision();
             cout << setprecision(3) << final_grade << setprecision(prec);
         }
