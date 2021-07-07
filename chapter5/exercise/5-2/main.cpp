@@ -6,7 +6,6 @@
 #include <string>
 #include <vector>
 #include "grade.h"
-#include "fgrade.h"
 #include "Student_info.h"
 
 using namespace std;
@@ -27,10 +26,6 @@ int main()
 
     // alphabetize the student records
     sort(students.begin(), students.end(), compare);
-
-    // extract failing students;
-    vector<Student_info> fails = extract_fails(students);
-
 
     // write the names and grades
     for (vector<Student_info>::const_iterator iter = students.begin();

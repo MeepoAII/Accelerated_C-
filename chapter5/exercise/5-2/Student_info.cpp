@@ -2,7 +2,6 @@
 
 
 using std::istream;
-using std::fstream;
 using std::vector;
 
 bool compare(const Student_info& x, const Student_info& y)

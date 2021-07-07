@@ -1,4 +1,11 @@
-#include "fgrade.h"
+#include "Student_info.h"
+#include "grade.h"
+
+#include <vector>
+#include <list>
+using std::vector;
+using std::list;
+
 
 bool fgrade(const Student_info& s)
 {
