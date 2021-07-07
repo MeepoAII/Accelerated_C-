@@ -56,7 +56,7 @@ vector<string> hcat(const vector<string>& left, const vector<string>& right)
 
         if (j != right.size())
         {
-            s = right[j++];
+            s += right[j++];
         }
 
         ret.push_back(s);
@@ -65,3 +65,11 @@ vector<string> hcat(const vector<string>& left, const vector<string>& right)
     
 }
 
+int main()
+{
+    vector<string> s1{"bitcoin", "fil", "xmr", "ethereum", "dodo"};
+    vector<string> s2{"trx", "uni", "foc", "bnb", "ht", "gt"};
+    vector<string> res = hcat(s1, s2);
+    for (auto x : res) std::cout << x << std::endl;
+    return 0;
+}
