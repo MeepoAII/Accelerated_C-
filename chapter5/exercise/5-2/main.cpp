@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include "grade.h"
+#include "fgrade.h"
 #include "Student_info.h"
 
 using namespace std;
@@ -17,19 +18,19 @@ int main()
     string::size_type maxlen = 0;   // 记录那个最长的名字，方便在报表中空格
 
     // read and store all the students data.
-    // while (read(cin, record))
-    // {
-    //     // find length if longest name
-    //     maxlen = max(maxlen, record.name.size());
-    //     students.push_back(record);
-    // }
-
-    // read from file
-    string filePath = "./data.txt";
-    readFromFile(filePath, record);
+    while (read(cin, record))
+    {
+        // find length if longest name
+        maxlen = max(maxlen, record.name.size());
+        students.push_back(record);
+    }
 
     // alphabetize the student records
     sort(students.begin(), students.end(), compare);
+
+    // extract failing students;
+    vector<Student_info> fails = extract_fails(students);
+
 
     // write the names and grades
     for (vector<Student_info>::const_iterator iter = students.begin();
