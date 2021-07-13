@@ -104,3 +104,10 @@ void Vec<T>::grow() {
     avail = new_avail;
     limit = data + new_size;
 }
+
+// avial 指向的是已经分配好但是没有被初始化的空间
+template<class T>
+void Vec<T>::unchecked_append(const T& val) {
+    alloc.construct(aval++, val);
+}
+
