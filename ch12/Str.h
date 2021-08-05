@@ -17,7 +17,11 @@ public:
     template<class In> Str(In b, In e) {
         std::copy(b, e, std::back_inserter(data));
     }
-    
+
+    size_type size() const { return data.size(); }
+
+    char& operator[](size_type i) { return data[i]; }
+    const char& operator[](size_type i) const { return data[i]; }
 
 private:
     Vec<char> data;
